@@ -1,0 +1,33 @@
+
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+allprojects {
+    repositories {
+        mavenLocal()
+        maven { url = uri('https://lss233.littleservice.cn/repositories/minecraft/') }
+        maven { url = uri('https://maven.enginehub.org/repo/') }
+        maven { url = uri('https://repo.essentialsx.net/releases/') }
+        maven { url = uri('https://repo.extendedclip.com/content/repositories/placeholderapi/') }
+        maven { url = uri('https://hub.spigotmc.org/nexus/content/groups/public/') }
+        maven { url = uri('https://jitpack.io') }
+        maven { url = uri('https://repo.maven.apache.org/maven2/') }
+    }
+}
+
+group = 'com.hm.achievement'
+version = '8.0.2'
+java.sourceCompatibility = JavaVersion.VERSION_1_8
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from(components.java)
+        }
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
