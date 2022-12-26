@@ -7,314 +7,162 @@
 #                                                                                                                      #
 #======================================================================================================================#
 
-# Only spaces, no tabs. Don't forget the indents (2 spaces per indentation level).
-# To check syntax errors in your file, use: https://yaml-online-parser.appspot.com
-# To get involved with the project, visit its GitHub: https://github.com/PyvesB/advanced-achievements
-# To get some valuable additional documentation, visit the Wiki: https://github.com/PyvesB/advanced-achievements/wiki
-# The default configuration files can be found at the following address:
-# https://github.com/PyvesB/advanced-achievements/blob/master/advanced-achievements-plugin/src/main/resources/config.yml
+# 请使用空格，禁止使用Tab缩进，请不要忘记缩进 (每级缩进使用两个空格)。 汉化by Fur_xia 版本：7.2.5
+# 可以使用此网站检查格式是否错误: https://yaml-online-parser.appspot.com
+# 初始设置(英文): https://github.com/PyvesB/advanced-achievements/blob/master/advanced-achievements-plugin/src/main/resources/config.yml
+# 如果您希望帮助这个插件做的更好，请前往GitHub来帮助我们把: https://github.com/PyvesB/advanced-achievements
+# 您也可以查看我们的wiki来获得关于配置插件有价值的额外文档: https://github.com/PyvesB/advanced-achievements/wiki
+# 如果您愿意给我们经济上的捐献请使用: https://www.paypal.com/cgi-bin/webscr?hosted_button_id=7KTQYC4YT52NQ&cmd=_s-xclick
 
-#======================================================================================================================#
-#                                                   GENERAL SETTINGS                                                   #
-#                                                                                                                      #
-#                                Various settings to fine-tune the plugin's behaviour.                                 #
-#======================================================================================================================#
+#=============================O=O=============================#
+# II-------------------------------------------------------II #
+# |                       总体设置                        | #
+# 2---------------------------------------------------------2 #
+#=============================o=o=============================#
 
-# Time in seconds between each /aach book. Ignored for players with achievement.* permission.
+# 使用指令 /aach book 之间的间隔（除非拥有权限：achievement.*）
 TimeBook: 900
 
-# Sort pages of the book in chronological order (false for reverse chronological order).
+# 在成就书中按照时间排列书页 （false则为按照时间倒序）
 BookChronologicalOrder: true
 
-# Separator between name, description and date on an /aach book page.
+# 在 /aach book 指令GUI界面中，名称/描述/日期之间的分隔符
 BookSeparator: ""
 
-# Activate firework effects when a player receives an achievement.
+# 设置为true以启用玩家获得成就时的烟火效果
 Firework: true
 
-# Choose ball_large, ball, burst, creeper, star or random.
+# 选择烟火的种类，请填写：ball_large(大型球状), ball(小型球状), burst(爆裂型), creeper(苦力怕脸型), star(星型) or random(随机形状).
 FireworkStyle: ball_large
 
-# Activate simpler effects and a calm sound when a player receives an achievement. Ignored if Firework setting is true.
+# 设置为true以启用玩家获得成就时的简单效果和音效，若Firework项设置为true本项的true将会被忽略
 SimplifiedReception: false
 
-# Number of players displayed in /aach top, week and month commands.
+# 在/aach top, week, month 指令中显示的玩家数量
 TopList: 5
 
-# Activate particle effects when performing /aach book, /aach stats when all achievements have been received and
-# /aach top, week or month when ranked in the top list.
+# 设置为true以启用当获得所有成就的玩家使用指令 /aach book 或 /aach stat 显示粒子效果
+# 在排名榜单上玩家输入/aach top,week,month 时也会有粒子效果
 AdditionalEffects: true
 
-# Activate sounds when performing /aach book, /aach stats when all achievements have been received and  /aach top, week
-# or month when ranked in the top list.
+# 设置为true以启用当获得所有成就的玩家使用指令 /aach book 或 /aach stat 播放音效
+# 在排名榜单上玩家输入/aach top,week,month 时也会播放音效
 Sound: true
 
-# For /aach book. All sound values can be found here: https://github.com/PyvesB/advanced-achievements/wiki/Sound-names
+# 当使用指令 /aach book 时播放的音效。 可用值: github.com/PyvesB/advanced-achievements/wiki/Sound-names
 SoundBook: entity_player_levelup
 
-# For /aach stats when all achievements have been received.
+# 当拥有所有成就的玩家使用指令 /aach stats 时播放的音效。 可用值: github.com/PyvesB/advanced-achievements/wiki/Sound-names
 SoundStats: entity_firework_rocket_blast
 
-# For /aach top, week, month when ranked in the top list.
+# 在排名榜单上玩家输入/aach top,week,month 时播放的音效。 可用值: github.com/PyvesB/advanced-achievements/wiki/Sound-names
 SoundRanking: entity_firework_rocket_blast
 
-# Icon of the plugin (default: shamrock, \u2618).
+# 设置插件的图标/前缀 (默认: 三叶草, \u2618).
 Icon: \u2618
 
-# Main color of the plugin (default: 5, dark purple).
+# 插件部分信息的颜色 (默认: 5, 深紫色).
 Color: 5
 
-# Notify other connected players when an achievement is received. This defines the default behaviour, players can 
-# override what they see by using /aach toggle.
+# 当一个玩家获得一项成就时，告知其他玩家
+# 这里设置的为初始设置，玩家可以通过指令“/aach toggle”来选择其是否接受消息
 NotifyOtherPlayers: false
 
-# Notify other connected players using action bars, otherwise chat messages are used.
+# 若 ActionBarNotify 为 true 插件将会使用 action bar 来通知其他玩家，否则会通过聊天栏信息通知其他玩家。
 ActionBarNotify: true
 
-# Display achievement DisplayName and Message as screen titles.
+# 使用title显示成就的显示名称和信息。本项生效最低Minecraft版本：1.8
 TitleScreen: true
 
-# Display a boss bar showing progress a few seconds after an achievement is received.
-BossBarProgress: true
-
-# Send informative chat messages to the player receiving an achievement.
+# 当玩家获得一项成就时在聊天框显示成就信息
 ReceiverChatMessages: true
 
-# When a player receives an achievement, the DisplayName, Message and rewards of the achievement are displayed in the 
-# chat as separate messages. If true, a single hoverable text will be displayed to the receiver instead.
+# 当一个玩家获得一项成就时，成就名称，信息，奖励会被显示在聊天框中
+# 若 HoverableReceiverChatText 为 true ，一条可用鼠标悬浮显示信息的消息将会直接展现给接受者，否则信息将会被一条一条的发送
 HoverableReceiverChatText: false
 
-# Format of the header used for most chat messages (default: "§7[%ICON%§7]"). Can be empty, "".
+# 设置大部分聊天框信息的前缀格式 (默认: "§7[%ICON%§7]")，若不想使用前缀，请设置为 ""
 ChatHeader: "§7[%ICON%§7]"
 
-# Stop all stats from increasing when player in creative mode, including PlayedTime. Connection achievements will only
-# be handled once a player switches to a non-creative mode.
+# 当玩家在创造模式时停止一切数据的统计，包括 PlayedTime(游玩时间)
+# 连接相关成就也只会在玩家调整为非创造模式时才会被计算
 RestrictCreative: false
 
-# Stop all stats from increasing when player in spectator mode, including PlayedTime. Connection achievements will only
-# be handled once a player switches to a non-spectator mode.
+# 停止当玩家在观察者模式时一切数据的统计，包括游玩时间。
+# 连接相关成就也只会在玩家调整为非观察者模式时才会被计算，本项生效最低Minecraft版本：1.8
 RestrictSpectator: true
 
-# Stop all stats from increasing when player in adventure mode, including PlayedTime. Connection achievements will only
-# be handled once a player switches to a non-adventure mode.
+# 停止玩家在冒险模式时一切数据的统计，包括游玩时间。
+# 连接相关成就也只会在玩家调整为非冒险模式时才会被计算
 RestrictAdventure: false
 
-# Stop all stats from increasing when player in a specific world, including PlayedTime (delete the [] before listing
-# values). Connection achievements will only be handled once a player enters a non-excluded world.
+# 停止玩家在指定世界中一切数据的统计，包括游玩时间。（在加入有效值之前请删除[]
+# 连接相关成就也只会在玩家进入非例外世界时才会被计算
 ExcludedWorlds: []
 #  - yourWorld1
 #  - yourWorld2
 
-# Ignore vertical dimension (Y axis) when calculating distance statistics.
+# 在计算移动距离时，忽略垂直方向 (Y 轴) 的数据计算。
 IgnoreVerticalDistance: false
 
-# Hide these categories from the GUI and prevent statistics from increasing. Once added to this list, you do not need to
-# delete the corresponding achievement configuration section. To enable all categories, remove all listed items and
-# instead specify DisabledCategories: []
+# 在GUI或其他统计输出中不展示成就种类
+# 同时也阻止玩家获得该类成就/该类成就统计数据增加
 DisabledCategories:
-  - AdvancementsCompleted
+- AdvancementsCompleted
 
-# Do not take into account items broken with Silk Touch for the Breaks achievements.
+# 不将使用精准采集工具破坏的物品计入Breaks相关成就
 DisableSilkTouchBreaks: false
 
-# Do not take into account ores broken with Silk Touch for the Breaks achievements. DisableSilkTouchBreaks takes
-# precedence over this. Not applicable to iron or gold ores.
+# 不将使用精准采集工具破坏的矿物计入Breaks相关成就
+# DisableSilkTouchBreaks 为true将忽略本项。 不适用于破坏铁矿或金矿
 DisableSilkTouchOreBreaks: false
 
-# Used for the Breaks achievement category. You may need to expand this list when new Minecraft versions are released.
-OreBlocks:
-  - coal_ore
-  - diamond_ore
-  - emerald_ore
-  - lapis_ore
-  - nether_gold_ore
-  - nether_quartz_ore
-  - redstone_ore
+# 使用的预言文件名称。可用值：lang.yml, lang-BP.yml, lang-CN.yml, lang-CZ.yml, lang-DE.yml, lang-ES.yml, lang-FI.yml
+# lang-FR.yml, lang-HU.yml, lang-IT.yml, lang-PL.yml, lang-RO.yml, lang-RU.yml, lang-SE.yml, lang-TR.yml, lang-TW.yml, lang-VN.yml
+LanguageFileName: lang-CN.yml
 
-# Language file to use. Available: lang.yml, lang-BP.yml, lang-CN.yml, lang-CZ.yml, lang-DA.yml, lang-DE.yml,
-# lang-ES.yml, lang-FI.yml, lang-FR.yml, lang-HU.yml, lang-IT.yml, lang-PL.yml, lang-RO.yml, lang-RU.yml, lang-SE.yml,
-# lang-SK.yml, lang-TR.yml, lang-TW.yml, lang-VN.yml
-LanguageFileName: lang.yml
-
-# Time in seconds between each statistic count. Only the listed categories are currently supported.
+# 每一次计入成就统计之间间隔（冷却时间）。现仅支持限制列出项
 StatisticCooldown:
-  LavaBuckets: 10
-  WaterBuckets: 10
-  Milk: 10
-  Beds: 30
-  Brewing: 5
-  MusicDiscs: 30
-  BooksEdited: 10
+  LavaBuckets: 10      #岩浆桶
+  WaterBuckets: 10     #水桶
+  Milk: 10             #牛奶
+  Beds: 30             #床
+  Brewing: 5           #酿造
+  MusicDiscs: 30       #唱片
 
-# Display action bar message when player performs an action while in a cooldown period.
+# 当玩家在冷却时间内进行相应行为，显示一个action bar，本项生效最低Minecraft版本：1.8
 CooldownActionBar: true
 
-# Locale used to format dates in /aach book and /aach list. You must select an ISO 639 language code. The list of
-# possible language codes can be found at https://www.loc.gov/standards/iso639-2/php/code_list.php
-DateLocale: en
+# 设置用于规范显示在/aach book和/aach list的日期格式的Locale。您必须选择一个 ISO 639 语言代码
+# 可用语言代码请前往网页： www.loc.gov/standards/iso639-2/php/code_list.php  查看
+DateLocale: zh
 
-# Display reception time of achievements in /aach book and /aach list in addition to the date.
+# 在 /aach book 和 /aach list 中显示成就的获取时间
+# 仅适用于显示插件版本3.0以上时获得的成就，不会显示具体的时间，只会显示为如 “midnight”这种
 DateDisplayTime: true
 
-# Awarded when a player has received all the achievements. Use the same reward pattern as with achievements.
-# See https://github.com/PyvesB/advanced-achievements/wiki/Rewards
+# 当玩家获得所有成就时给予玩家的奖励，与成就奖励设置格式相同
+# 请查看 https://github.com/PyvesB/advanced-achievements/wiki/Rewards
 AllAchievementsReceivedRewards:
   IncreaseMaxOxygen: 30
   Experience: 100
 
-# PlayedTime will no longer increase when the player is AFK. Requires Essentials to work.
+# 当为true时，PlayedTime(游玩时间)将不会再玩家挂机时增加。需要Essentials作为前置插件以使用本功能
 IgnoreAFKPlayedTime: false
 
-# Register advancements with a description corresponding to the Goal parameter of each achievement. If changed, run
-# /aach generate to regenerate advancements with the new value taken into account.
+# 用与每个成就的目标参数相对应的描述来注册成就。
+# 如果改变，使用/aach generate来重新生成成就的参数值，使用Minecraft 1.12以前的版本中，本项设置无效
 RegisterAdvancementDescriptions: true
 
-# Hide advancements from the advancement GUI. Advancement notifications will still appear when receiving achievements.
+# 若为true，隐藏成就GUI中的成就。获得成就时仍然会显示获取成就的信息
+# 使用Minecraft 1.12以前的版本中，本项设置无效
 HideAdvancements: false
 
-# Title shown on the root advancement.
+# 根成就标题
 RootAdvancementTitle: Advanced Achievements
 
-# Background shown on the advancement tab. Must be a resource location to any image in a resource pack.
+# 成就页背景，必须是材质包中的任意一个图片的路径
 AdvancementsBackground: "minecraft:textures/item/book.png"
-
-# Used for the Fireworks achievement category. In vanilla Minecraft, fireworks cannot be launched on the following
-# blocks. Unless listed here, players may be able to abuse the Fireworks category by repeatedly right clicking on the
-# block and not actually using any fireworks. You may need to expand this list when new Minecraft versions are released.
-ForbiddenFireworkBlocks:
-  - glow_item_frame
-  - painting
-  - item_frame
-  - minecart
-  - hopper_minecart
-  - tnt_minecart
-  - command_block_minecart
-  - furnace_minecart
-  - chest_minecart
-
-# Used for the Fireworks achievement category. In vanilla Minecraft, fireworks can only be launched on the following
-# blocks when sneaking. Unless listed here, players may be able to abuse the Fireworks category by repeatedly right 
-# clicking on the block and not actually using any fireworks. You may need to expand this list when new Minecraft 
-# versions are released.
-ForbiddenFireworkBlocksWhenNotSneaking:
-  - polished_blackstone_button
-  - furnace
-  - dispenser
-  - chest
-  - note_block
-  - lever
-  - stone_button
-  - ender_chest
-  - beacon
-  - anvil
-  - trapped_chest
-  - hopper
-  - dropper
-  - brewing_stand
-  - crafting_table
-  - acacia_button
-  - birch_button
-  - dark_oak_button
-  - jungle_button
-  - oak_button
-  - spruce_button
-  - acacia_door
-  - birch_door
-  - dark_oak_door
-  - jungle_door
-  - oak_door
-  - spruce_door
-  - acacia_fence_gate
-  - birch_fence_gate
-  - dark_oak_fence_gate
-  - jungle_fence_gate
-  - oak_fence_gate
-  - spruce_fence_gate
-  - enchanting_table
-  - acacia_trapdoor
-  - birch_trapdoor
-  - dark_oak_trapdoor
-  - jungle_trapdoor
-  - oak_trapdoor
-  - spruce_trapdoor
-  - acacia_boat
-  - birch_boat
-  - dark_oak_boat
-  - jungle_boat
-  - oak_boat
-  - spruce_boat
-  - black_bed
-  - blue_bed
-  - brown_bed
-  - cyan_bed
-  - gray_bed
-  - green_bed
-  - light_blue_bed
-  - light_gray_bed
-  - lime_bed
-  - magenta_bed
-  - orange_bed
-  - pink_bed
-  - purple_bed
-  - red_bed
-  - white_bed
-  - yellow_bed
-  - cake
-  - comparator
-  - repeater
-  - command_block
-  - armor_stand
-  - chain_command_block
-  - repeating_command_block
-  - black_shulker_box
-  - blue_shulker_box
-  - brown_shulker_box
-  - cyan_shulker_box
-  - gray_shulker_box
-  - green_shulker_box
-  - light_blue_shulker_box
-  - lime_shulker_box
-  - magenta_shulker_box
-  - orange_shulker_box
-  - pink_shulker_box
-  - purple_shulker_box
-  - red_shulker_box
-  - white_shulker_box
-  - yellow_shulker_box
-  - shulker_box
-  - barrel
-  - bell
-  - blast_furnace
-  - cartography_table
-  - grindstone
-  - loom
-  - smoker
-  - stonecutter
-  - acacia_sign
-  - acacia_wall_sign
-  - birch_sign
-  - birch_wall_sign
-  - dark_oak_sign
-  - dark_oak_wall_sign
-  - jungle_sign
-  - jungle_wall_sign
-  - oak_sign
-  - oak_wall_sign
-  - spruce_sign
-  - spruce_wall_sign
-
-# Used for the HoePlowings achievement category. You may need to expand this list when new Minecraft versions are
-# released.
-HoePlowableBlocks:
-  - dirt
-  - grass_block
-
-# Used for the Fish achievement category. You may need to expand this list when new Minecraft versions are released.
-FishableFish:
-  - cod
-  - salmon
-  - pufferfish
-  - tropical_fish
 
 #======================================================================================================================#
 #                                                     GUI SETTINGS                                                     #
@@ -325,759 +173,741 @@ FishableFish:
 # Format of the achievement category name in /aach list (default: "%ICON% %NAME% %ICON%").
 ListAchievementFormat: "%ICON% %NAME% %ICON%"
 
-# Obfuscate achievements that have not yet been received in /aach list.
+# 在 /aach list 中隐藏未获得的成就。
 ObfuscateNotReceived: false
 
-# For Multiple action achievement categories with a series of related achievements, show achievements that have been
-# obtained and show the next obtainable achievement, but obfuscate the additional achievements. For example, under 
-# Places, stone, the first achievement could have a target of 100 stone, the second 500 stone, and the third 1000 stone.
-# When ObfuscateProgressiveAchievements is true, initially only the 100 stone achievement will be readable in the GUI.
-# Once 100 stone have been placed, the 500 stone achievement will become legible.
+# 对于那些每次成就只是在时间发生次数上变化的成就类，当前一项成就完成时展示下一项成就，但是隐藏其余的成就
+# 例如，在Places stone类中
+# 第一个成就可能是100个石头，第二个是500个石头，第三个成就是1000个石头
+# 当 ObfuscateProgressiveAchievements 为 true 时，最初只会在GUI中显示100石头的成就，
+# 直到这个成就被获得后，500石头的成就才会被显示
 ObfuscateProgressiveAchievements: false
 
-# Similar to ObfuscateProgressiveAchievements, but displays not received achievements as locked in /aach list.
+# 与 ObfuscateProgressiveAchievements 类似，但在/aach list中显示为锁定
 HideProgressiveAchievements: false
 
-# Hide categories for which a player has not yet received achievements by displaying them as locked in /aach list.
+# 隐藏玩家还未获得其中成就的成就类别（在/aach list中显示为锁定）
 HideNotReceivedCategories: false
 
-# Completely hide categories for which the player does not have the matching permission (e.g. achievement.count.beds).
+# 完全隐藏玩家没有相应权限的成就类别
 HideNoPermissionCategories: false
 
-# Hide the reward display in /aach list.
+# 在/aach list 中隐藏成就奖励
 HideRewardDisplayInList: false
 
-# Display precise statistic information in the /aach list progress bars.
+# 在/aach list进度条中显示准确的统计信息
 EnrichedListProgressBars: true
 
-# Annotate each achievement displayed in a /aach list category with a number.
+# Annotate each achievement displayed in a /aach list category with a number. 给 /aach list 中显示的每一个成就标注一个数字 （不确定）
 NumberedItemsInList: false
 
-# Color used for not yet received achievements in /aach list.
+# 当一个成就还未获得时，在/aach list中显示目标和进度条的颜色
 ListColorNotReceived: 8
 
-# Italicise not yet received achievements in /aach list. Obfuscated achievements are not affected.
+# 将未获得成就在/aach list中字体改为斜体. 被混淆的成就则不会被影响。
 ListItaliciseNotReceived: true
 
-# By default, the back button in the GUI returns to the listing of all categories. Use this option if you want to run a
-# command instead. PLAYER placeholder is supported. 
+# 默认的，GUI界面的返回按键将会退回到所有类别列表。
+# 如果你想让它变成执行一条指令，请使用本项内容。支持玩家占位符 PLAYER
 OverrideBackButtonBehaviour: ""
 
-# If true, the icon of the back button in the GUI will be the same as the category currently being viewed.
+# 若为 true，GUI页面的返回键将会和当前查看的类别标识相同
 BackButtonIsCategoryItem: true
 
 #======================================================================================================================#
-#                                                  DATABASE SETTINGS                                                   #
+#                                                      数据库设置                                                       #
 #                                                                                                                      #
-#                       The database is where all player statistics and achievements are stored.                       #
+#                                            数据库用以保存所有玩家统计数据和成就                                         #
 #======================================================================================================================#
 
-# Make a daily backup of your local database (if sqlite or h2) when the server restarts.
+# 每日备份本地数据库（如果为 sqlite 或 h2）
 DatabaseBackup: true
 
-# Database type, sqlite, h2, postgresql or mysql. Do a full server restart for this to take effect.
+# 数据库类型 可用值：sqlite, h2, postgresql 或 mysql. 请重启以使本项设置生效
 DatabaseType: h2
 
-# Prefix added to the tables in the database. If you switch from the default tables names (no prefix), the plugin does
-# an automatic renaming. Otherwise you must rename tables manually. Do a full server restart for this to take effect.
+# 数据库表格的前缀，如果您更改了初始表格名，
+# 插件将会自动尝试更改表明。否则您必须手动重命名您的表格名，请重启服务器以使本项设置生效
 TablePrefix: ""
 
-# When using groups of subcategories for Multiple action achievements (e.g. snow|snow_block|ice), you must ensure that
-# the value of this parameter is greater than the total number of characters in the group. Unless you use groups of very
-# large sizes, you don't need to change this value.
+# 当你使用多行为成就时，请保证本项的参数超过当前组内字符总数。
+# 除非你使用了一个有很多字符的组
+# 不然你没必要修改本项
 TableMaxSizeOfGroupedSubcategories: 128
 
-# Specify additional options when opening a connection to a MySQL/PostgreSQL database. Start each option with &, for
-# example "&useUnicode=yes&characterEncoding=UTF-8". Make sure the key-value pairs themselves are URL encoded.
+# 当连接到MySQL或PostgreSQL数据库时的一些特别的设置，每一项将以&开头
+# 例如 "&useUnicode=yes&characterEncoding=UTF-8" Make sure the key-value pairs themselves are URL encoded. 确保关键值对本身是URL编码的（没看懂）
 AdditionalConnectionOptions: ""
 
-# Settings to connect to your MySQL/PostgreSQL database (ignored if sqlite).
-# A PostgreSQL database address will be similar to jdbc:postgresql://localhost:5432/minecraft
+# 连接到MySQL或PostgreSQL数据库的设置
+# 一个PostgreSQL数据库应当使用类似于：jdbc:postgresql://localhost:5432/minecraft 的地址
 DatabaseAddress: "jdbc:mysql://localhost:3306/minecraft"
 DatabaseUser: root
 DatabasePassword: root
 
 #======================================================================================================================#
-#                                                 PERFORMANCE SETTINGS                                                 #
+#                                                        性能设置                                                       #
 #                                                                                                                      #
-#                                    In most cases, you won't need to change these.                                    #
+#                                          在大多数情况下，您无需修改本部分的内容！                                        #
 #======================================================================================================================#
 
-# Frequency of play time checks for players (seconds). Smaller values give more precision but more CPU usage.
+# 检查玩家游玩时间的频率（单位：秒）。更小的值会使游玩时间更精准，但是会消耗更多CPU资源
 PlaytimeTaskInterval: 60
 
-# Frequency of distance traveled checks by players (seconds). Smaller values give more precision but more CPU usage.
+# 计算玩家移动距离的频率（单位：秒）。更小的值会使距离计算更精准，但是会消耗更多CPU资源
 DistanceTaskInterval: 5
 
 # Enable if you use BungeeCord or if your database is shared by multiple servers. Do a full server restart.
 BungeeMode: false
 
 #======================================================================================================================#
-#                                             MULTIPLE ACTION ACHIEVEMENTS                                             #
+#                                                        多行为成就                                                     #
 #                                                                                                                      #
-#                Achievements in the following categories require both a sub-category and a threshold.                 #
+#                                                这些成就拥有子类和对应阈值                                              #
 #======================================================================================================================#
 
-# Count blocks placed. You can use any of the following:
-# - block names (available names: https://github.com/PyvesB/advanced-achievements/wiki/Material-names).
-# - custom display name of items (e.g. the name of a player's head).
+# 计算一个特定的方块被放置次数
+# - 方块名 （可用材料名称：github.com/PyvesB/advanced-achievements/wiki/Material-names）
+# - 你可以在1.13之前的Minecraft版本使用如sand:1这样的编辑来给予带有metadata值1的沙子（红沙）
+# - 含有自定义名称的物品(例如玩家头颅的名字)
 Places:
   chest:
     5:
-      # Optional, used in /aach list when achievement not yet received, and in advancements.
-      Goal: Place 5 chests.
-      # Description, displayed when receiving achievement, and in /aach book and /aach list.
-      Message: §6You have placed 5 chests!
-      # Database name, must also be used in /aach delete and /aach check.
+      # 可选，当未获得成就时使用/aach list 或在成就详情中显示。
+      Goal: 放置5个箱子
+      # 介绍；当获取成就时或在/aach book和/aach list中显示。
+      Message: §6你已经放置了5个箱子！
+      # 数据库名称，也必须在/aach delete和/aach check中使用。
       Name: place_5_chest
-      # Displayed when receiving achievement, and in /aach book and /aach list.
-      DisplayName: Storage Expert
-      # Used to select the display item for this achievement in gui.yml.
+      # 当获得成就时或在/aach book和/aach list中显示。
+      DisplayName: 储存专家
+      # 用以选择表示本成就的物品
       Type: normal
     50:
-      Goal: Place 50 chests.
-      Message: §6You have placed 50 chests!
+      Goal: 放置50个箱子
+      Message: §6你已经放置了50个箱子！
       Name: place_50_chest
-      DisplayName: Tetris Master
+      DisplayName: 存储大师
       Type: normal
   stone:
     100:
-      Goal: Place 100 Stones.
-      Message: One hundred placed stones!
+      Goal: 放置100个石头
+      Message: 你已经放置了100个石头！
       Name: place_100_stone
-      DisplayName: Stone Addict
+      DisplayName: 逐渐上头
       Type: normal
     1000:
-      Goal: Place 1000 stones.
-      Message: One thousand placed stones!
+      Goal: 放置1000个石头
+      Message: 你已经放置了1000个石头！
       Name: place_1000_stone
-      DisplayName: Stone God
+      DisplayName: 石头之神
       Type: normal
       Reward:
         Command:
-          Execute: "say §7ALERT: §4PLAYER§7 has become the §4STONE GOD§7!"
-          Display: Become the Stone God!
-  # Item custom display name, for example Mario's head from the Custom Heads plugin.
+          Execute: "say §7ALERT: §4PLAYER§7成为了 §4石头之神§7!"
+          Display: 成为石头之神！
+  # 拥有自定义名称的物品，例如使用Custom Heads插件获取的Mario的头颅
   §eMario:
     1:
-      Goal: Place Mario's head.
-      Message: Mario's head is on the ground!
+      Goal: 放置Mario的头颅
+      Message: Mario人头落地了！
       Name: place_1_mario
-      DisplayName: It's-a me, Mario!
+      DisplayName: 是我，Mario！
       Type: rare
 
-# Count blocks broken. You can use any of the following:
-# - block names (available names: https://github.com/PyvesB/advanced-achievements/wiki/Material-names).
+# 计算一种特定方块被破坏次数
+# - 方块名称（可用材料名称：github.com/PyvesB/advanced-achievements/wiki/Material-names）
+# - 你可以在1.13之前的Minecraft版本使用如sand:1这样的编辑来给予带有metadata值1的沙子（红沙）
 Breaks:
   ice:
     10:
-      Goal: Break 10 ice blocks.
-      Message: You have broken 10 ice blocks!
+      Goal: 破坏10个冰块
+      Message: 你已经破坏了10个冰块了！
       Name: break_10_ice
-      DisplayName: Cold Drink Supplier
+      DisplayName: 冷饮供应商
       Type: normal
-  # Use the following construct to track multiple types. Note that if ever you add/remove a type grouped to 
-  # others with |, progress for this sub-category group will start back at 0.
+  # 使用下列格式以统计多种物品。
+  # 当你加入/移除已有成就中的一项与其他物品用|隔开的物品时，本子类将会重置进度为0。
   snow|snow_block|ice:
     32:
-      Goal: Break 32 ice and/or snow.
-      Message: You have broken 32 ice and snow, Woo!
+      Goal: 破坏32个冰/雪
+      Message: 真棒！你已经破坏了32个冰/雪了！
       Name: break_32_ice_any
-      DisplayName: Praying for Summer
+      DisplayName: 祈祷夏天来临
       Type: normal
   stone:
     1:
-      Goal: Break a block.
-      Message: §1The first time you went mining!
+      Goal: 破坏一个石头
+      Message: §1这是你第一次下矿！加油！
       Name: break_1_stone
-      DisplayName: Cobble Gobble!
+      DisplayName: 初入Minecraft
       Type: normal
       Reward:
         Command:
-          Execute:
+          Execute: 
             - give PLAYER dispenser 10
             - give PLAYER lever 5
 
-# Count entities killed. You can use any of the following:
-# - entity types (available names: https://github.com/PyvesB/advanced-achievements/wiki/Entity-names).
-# - poweredcreeper.
-# - custom mob name (name tag/plugins such as Mythic Mobs).
-# - player to track player kills as a whole.
-# - specificplayer- followed by player UUID to track how many times a specific player has been killed.
+# 当一些实体被击杀，你可以用以下判断类型
+# - 一个实体类型 （可用实体名称：github.com/PyvesB/advanced-achievements/wiki/Entity-names）
+# - 高压苦力怕
+# - 一个有特定名称的怪物 （名称/插件 如 Mythic Mobs）
+# - player 以将击杀所有玩家当做一个事件
+# - specificplayer-后面加上玩家的UUID来检测一个特定玩家被击杀数量
 Kills:
   zombie:
     1:
-      Goal: Kill a zombie.
-      Message: The first time you killed a zombie!
+      Goal: 杀死一只僵尸
+      Message: 你第一次杀死了一只僵尸
       Name: kills_1_zombie
-      DisplayName: The Walking Dead
+      DisplayName: 活 死 人
       Type: normal
       Reward:
         Money: 1
         Item: diamond 1
-  # Mythic Mobs 'Display' parameter. Change & to §.
+  # Mythic Mobs 精英怪 'Display' 参数. 将 & 改为 §.
   §2Skeletal Knight:
     1:
-      Goal: Kill the evil Skeletal Knight.
-      Message: §eYou killed a Mythic Mob!
+      Goal: 杀死邪恶的骷髅骑士。
+      Message: §e你杀死了一只精英怪！
       Name: kills_1_skeletal_night
-      DisplayName: Mythic Killer
+      DisplayName: 精英猎手
       Type: rare
   specificplayer-56c79b19-4500-466c-94ea-514a755fdd09:
     1:
-      Goal: Kill the evil Author.
-      Message: Yippie! You killed the author of the plugin!
+      Goal: 杀死邪恶的插件作者！
+      Message: 哇哦！你杀死了插件的作者！
       Name: kills_1_darkpyves
-      DisplayName:  No More DarkPyves
+      DisplayName:  作 者 不 再
       Type: rare
       Reward:
         IncreaseMaxHealth: 1
 
-# Count targets shot (but not necessarily killed) with a projectile. You can use any of the following:
-# - block names: https://github.com/PyvesB/advanced-achievements/wiki/Material-names
-# - entity names: https://github.com/PyvesB/advanced-achievements/wiki/Entity-names
+# 当一个指定目标被投掷物射击（但是没必要杀死）
+# - 有效方块类型: github.com/PyvesB/advanced-achievements/wiki/Material-names
+# - 有效实体类型: github.com/PyvesB/advanced-achievements/wiki/Entity-names
 TargetsShot:
   villager:
     10:
-      Goal: Throw things at villagers.
-      Message: You lapidated villagers 10 times.
+      Goal: 朝着奸商丢东西。
+      Message: 你射中了奸商10次。
       Name: targetsshot_10_villager
-      DisplayName: The Stoner
+      DisplayName: 加入掠夺者
       Type: normal
   glass:
     100:
-      Goal: Try to break granny's windows.
-      Message: You shot 100 projectiles at glass blocks!
+      Goal: 尝试打坏奶奶的窗子。
+      Message: 你射♂中了100个玻璃方块！
       Name: targetsshot_100_glass
-      DisplayName: Window Breaker
+      DisplayName: 破窗者
       Type: normal
 
-# Count items crafted (available names: https://github.com/PyvesB/advanced-achievements/wiki/Material-names).
+# 一个特定物品被合成 （可用材料名称： github.com/PyvesB/advanced-achievements/wiki/Material-names）
 Crafts:
   diamond_sword:
     1:
-      Goal: Craft a sword.
-      Message: The first time you crafted a blade!
+      Goal: 合成一把钻石剑
+      Message: 你第一次合成一把钻石剑
       Name: craft_1_blade
-      DisplayName: Blacksmith Apprentice
+      DisplayName: 武器大师
       Type: normal
       Reward:
         Money: 2
     100:
-      Goal: Craft 100 swords.
-      Message: Next craft, Excalibur?
+      Goal: 合成100把钻石剑
+      Message: 下一次造啥？Excalibur？
       Name: craft_100_blade
-      DisplayName: Blacksmith Legend
+      DisplayName: 无 限 剑 制
       Type: rare
       Reward:
         Experience: 500
 
-# Count specific commands used. Specify command prefixes in lower case without initial slash. For example, command
-# '/petm setcolor red' from the PetMaster plugin matches with subcategory 'petm setcolor'. Aliases of a given command
-# will also be taken into account.
+# 当一个玩家使用一项特定指令时 （指定不带斜杠的小写命令前缀）
+# 如一个指令 /awf add world 来自 AntiWorldFly 插件 就可以使用子类 “awf add”
+# 给定指令的缩写也会被计入
 PlayerCommands:
   aach stats:
     10:
-      Goal: Check your stats 10x.
-      Message: Run the stats command 10 times!
+      Goal: 检查你成就数据10次
+      Message: 你检查了10次你的成就统计，现在成为成就大师了吗？
       Name: playercommand_aachstats_10
-      DisplayName: Statistician
+      DisplayName: 统 计 学 家
       Type: normal
       Rewards:
         Command:
-          Execute: say §7PLAYER is now a statistician
+          Execute: say §7PLAYER 成为了 带 统 计 学 家
           Display: Broadcast
 
-# Count animals bred (available names: https://github.com/PyvesB/advanced-achievements/wiki/Entity-names).
+# 喂动物 (可用实体名称: github.com/PyvesB/advanced-achievements/wiki/Entity-names).
 Breeding:
   sheep:
     1:
-      Goal: Breed a sheep.
-      Message: You bred your first sheep!
+      Goal: 繁殖一只羊
+      Message: 你第一次繁殖羊！
       Name: breeding_1_sheep
-      DisplayName: Breeder
+      DisplayName: 春天来了
       Type: normal
 
-# Count the maximum level reached in a job (full job name in lower case).
+# 计算一种职业的最高等级（职业名为小写）
 JobsReborn:
   hunter:
     1:
-      Goal: Level up as a hunter!
-      Message: You have reached hunter level 2!
+      Goal: 升级自己hunter的身份等级
+      Message: 你成为了二级hunter
       Name: jobsreborn_1_hunter
       DisplayName: Hunter
       Type: normal
 
-# Count effects held (effect name in lower case).
-# Available effects: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionEffectType.html
-EffectsHeld:
-  jump:
-    1:
-      Goal: Hold the jump boost effect!
-      Message: You jumped as high as a kangaroo!
-      Name: effectsheld_1_jump
-      DisplayName: Kangaroo
-      Type: normal
-
 #======================================================================================================================#
-#                                              NORMAL ACTION ACHIEVEMENTS                                              #
+#                                                        简单行为成就                                                   #
 #                                                                                                                      #
-#                      Achievements in the following categories require only require a threshold.                      #
+#                                              只存在次数（阈值）判断的简单成就                                           #
 #======================================================================================================================#
 
-# Count player connections during the day; statistic increases at most once per day.
+# 当一个玩家在一天中加入游戏；统计数据每天最多计算一次
 Connections:
   1:
-    Message: You connected to our server for the first time!
+    Message: 第一次来到服务器！
     Name: connect_1
-    DisplayName: Good Choice
+    DisplayName: 明智之举
     Type: normal
 
-# Count player deaths.
+# 当玩家当场去世时
 Deaths:
   1:
-    Goal: You have to Die.
-    Message: The first time you died!
+    Goal: 第一次死
+    Message: 你第一次死！
     Name: deaths_1
-    DisplayName: Rest in Peace
+    DisplayName: 永远安息
     Type: normal
     Reward:
-        # Text after the material and quantity will be used as the custom name of the item.
-        Item: stone 5 Tombstone
+        # 在材料名称和数量后的文字为材料的自定义名称，会显示在/aach list和真正受到奖励时
+        Item: stone 5 垫脚石
 
-# Count arrows shot.
+# 当射出箭矢
 Arrows:
   50:
-    Goal: Shoot 50 arrows.
-    Message: 50 arrows shot!
+    Goal: 射出50个箭矢
+    Message: 什么嘛，你射的还挺准的
     Name: arrows_50
-    DisplayName: Arrows Around the Place
+    DisplayName: 希望の花
     Type: normal
 
-# Count snowballs thrown.
+# 当雪球被丢出时
 Snowballs:
   1000:
-    Goal: Throw 1000 snowballs.
-    Message: 1000 snowballs thrown. That's the spirit!
+    Goal: 丢1000个雪球
+    Message: 丢了1000个雪球了！你就是PVP king！
     Name: snowballs_1000
-    DisplayName: Winter Addict
+    DisplayName: PVP 带佬
     Type: normal
     Reward:
-        # 30 corresponds to one bubble in the oxygen bar.
+        # 30代表氧气条中的1个气泡
         IncreaseMaxOxygen: 30
 
-# Count eggs thrown
+# 当鸡蛋被丢出时
 Eggs:
   1000:
-    Goal: Throw 1000 eggs.
-    Message: 1000 eggs thrown!
+    Goal: 丢1000个鸡蛋
+    Message: 你丢了1000个鸡蛋！母鸡哭了
     Name: eggs_1000
-    DisplayName: Omelet Addict
+    DisplayName: 蛋蛋的忧伤
     Type: normal
 
-# Count fish caught.
+# 当抓到一条鱼
 Fish:
   1:
-    Goal: Fish a fish.
-    Message: The first time you caught a fish!
+    Goal: 钓一条鱼
+    Message: 你第一次钓到鱼
     Name: fish_1
-    DisplayName: Time for Fish and Chips
+    DisplayName: 是时候做炸鱼薯条了！ #译者注：作者是英国人
     Type: normal
 
-# Count treasures caught with a fishing rod.
+# 当用鱼竿获得一个宝藏
 Treasures:
   1:
-    Goal: Get a treasure from the sea.
-    Message: Your first treasure from the sea!
+    Goal: 获得大海的宝藏
+    Message: 你获得来自大海的第一个宝物！
     Name: treasure_1
-    DisplayName: Treasure Hunter
+    DisplayName: 宝物猎人、
     Type: normal
 
-# Count tools, armors or weapons broken.
+# 当工具/防具/武器 被用坏
 ItemBreaks:
   1:
-    Goal: Let an item break.
-    Message: You broke your favorite tool!
+    Goal: 把一个工具用坏掉吧
+    Message: 你用坏了你的第一个工具！
     Name: itembreaks_1
-    DisplayName: §4Clumsy Guy
+    DisplayName: §4工具破坏者
     Type: normal
 
-# Count items eaten (excludes potions and milk).
+# 吃一个东西（除药水和牛奶）
 EatenItems:
   1:
-    Goal: Eat something.
-    Message: Just had a snack!
+    Goal: 吃点啥
+    Message: 吃点零食吧！
     Name: eatenitems_1
-    DisplayName: First Snack
+    DisplayName: 第一个零食
     Type: normal
 
-# Count sheep sheared.
+# 剪羊毛
 Shear:
   100:
-    Goal: Shear 100 sheep.
-    Message: 100 sheep sheared!
+    Goal: 剪100只羊的羊毛
+    Message: 剪了100只羊的毛！
     Name: shear_100
-    DisplayName: §1Wool Addict
+    DisplayName: §1羊毛上瘾
     Type: normal
 
-# Count cows milked.
+# 挤奶
 Milk:
   1:
-    Goal: Milk a cow.
-    Message: §eJust milked a cow!.... §cMOOW
+    Goal: 挤一次奶
+    Message: §e从牛上挤了一次奶！.... §cMOOW
     Name: milk_1
-    DisplayName: First Milk
+    DisplayName: 第一次挤奶
     Type: normal
     Reward:
       Experience: 100
 
-# Count buckets filled with lava.
+# 用桶接岩浆
 LavaBuckets:
   10:
-    Goal: Fill 10 buckets with lava.
-    Message: 10 buckets filled with lava!
+    Goal: 接10桶岩浆
+    Message: 接了10桶岩浆！
     Name: lavabuckets_10
-    DisplayName: Pyroman
+    DisplayName: 多喝岩浆！
     Type: normal
 
-# Count buckets filled with water.
+# 用桶接水
 WaterBuckets:
   15:
-    Goal: Fill 10 buckets with water.
-    Message: 15 buckets filled with water!
+    Goal: 接15桶水
+    Message: 接了15桶水
     Name: waterbuckets_15
-    DisplayName: Fireman
+    DisplayName: 消防员
     Type: normal
 
-# Count trades with a villager (increases by one per trade regardless of the number of items traded).
+# 和村民交易
 Trades:
   1:
-    Goal: Trade with a villager.
-    Message: Doing business with your first villager!
+    Goal: 和村民交易
+    Message: 和村民第一次交易！
     Name: trades_1
-    DisplayName: First Trade
+    DisplayName: 首次被宰
     Type: normal
 
-# Count anvil usages.
+# 使用铁砧
 AnvilsUsed:
   1:
-    Goal: Repair an item.
-    Message: You just repaired your first item!
+    Goal: 修复一样物品
+    Message: 你第一次修复了一样物品
     Name: anvilsused_1
-    DisplayName: First Repair
+    DisplayName: 初次修复
     Type: normal
 
-# Count enchantments performed.
+# 附魔
 Enchantments:
   5:
-    Goal: Enchant 5 things.
-    Message: 5 objects enchanted!
+    Goal: 附魔5样东西
+    Message: 给5样东西附魔了！
     Name: enchantments_5
-    DisplayName: §5Wizard
+    DisplayName: §5巫师        #事英式幽默
     Type: normal
 
-# Count the number of times a player enters a bed.
+# 使用床
 Beds:
   5:
-    Goal: Sleep 5 times.
-    Message: You entered a bed 5 times!
+    Goal: 睡5觉
+    Message: 你睡了五觉
     Name: bed_5
-    DisplayName: Sleepy Guy
+    DisplayName: 好困
     Type: normal
 
-# Count the maximum level reached.
+# 最大等级
 MaxLevel:
   10:
-    Goal: Reach level 10.
-    Message: Level 10 reached!
+    Goal: 达到10级
+    Message: 10级啦！
     Name: maxlevel_10
-    DisplayName: §4Rookie
+    DisplayName: §4加油升级！
     Type: normal
 
-# Count potions consumed.
+# 使用药水
 ConsumedPotions:
   100:
-    Goal: Drink 100 potions.
-    Message: Drinking weird beverages all the time...
+    Goal: 喝100瓶药水
+    Message: 喝了100瓶药水
     Name: consumedpotions_100
-    DisplayName: Alcoholic
+    DisplayName: 酒鬼！
     Type: normal
 
-# Count the amount of time played on the server (in hours, use integers).
+# 在服务器中玩的时间（单位：小时，且为整数）
 PlayedTime:
   1:
-    Goal: Play an hour.
-    Message: You played for one hour on the server!
+    Goal: 玩一个小时
+    Message: 在服务器的第一个小时
     Name: playedtime_1
-    DisplayName: First Hour
+    DisplayName: 第一个小时
     Type: normal
 
-# Count distance traveled by foot.
+# 步行的距离
 DistanceFoot:
   1000:
-    Goal: Travel 1000 Blocks with your feet.
-    Message: You traveled 1000 blocks by foot!
+    Goal: 步行1000格
+    Message: 你步行了一千格！
     Name: distancefoot_1000
-    DisplayName: Big Walker
+    DisplayName: 抱歉,今天步行
     Type: normal
 
-# Count distance traveled on a pig.
+# 骑猪的距离
 DistancePig:
   100:
-    Goal: Travel 100 Blocks with a pig.
-    Message: You traveled 100 blocks on a pig!
+    Goal: 骑猪走过100格
+    Message: 你骑猪走过了100格！
     Name: distancepig_100
-    DisplayName: Carrot on a Stick Master
-    Type: rare
+    DisplayName: 猪 突 猛 进
+    Type: normal
 
-# Count distance traveled on a horse.
+# 骑马的距离
 DistanceHorse:
   500:
-    Goal: Travel 500 Blocks with a horse.
-    Message: You traveled 500 blocks on a horse!
+    Goal: 骑马走过500格
+    Message: 你骑马走过了500格！
     Name: distancehorse_500
-    DisplayName: The Avener
+    DisplayName: 爱 马 仕
     Type: normal
 
-# Count distance traveled in a minecart.
+# 坐矿车的距离
 DistanceMinecart:
   100:
-    Goal: Travel 100 Blocks with a minecart.
-    Message: You traveled 100 blocks in a minecart!
+    Goal: 坐矿车移动100格
+    Message: 你做矿车移动了100格！
     Name: distanceminecart_100
-    DisplayName: Carting Fan
+    DisplayName: 火车王
     Type: normal
 
-# Count distance traveled in a boat.
+# 坐船的距离
 DistanceBoat:
   200:
-    Goal: Travel 200 Blocks with a boat.
-    Message: You traveled 200 blocks in a boat!
+    Goal: 坐船移动200格
+    Message: 你坐船移动200格！
     Name: distanceboat_200
-    DisplayName: Great Sailor
+    DisplayName: 水手
     Type: normal
 
-# Count distance traveled with elytra.
+# 使用鞘翅移动的距离，1.9之前版本请忽略本项
 DistanceGliding:
   100:
-    Goal: Fly 100 blocks with an elytra.
-    Message: You traveled 100 blocks with elytra!
+    Goal: 用鞘翅飞100格
+    Message: 你用鞘翅飞了100格！
     Name: distancegliding_100
-    DisplayName: Angel
-    Type: rare
+    DisplayName: 鸟 人
+    Type: normal
 
-# Count distance traveled on a llama.
+# 坐在羊驼上移动的距离，1.11之前版本请忽略本项
 DistanceLlama:
   150:
-    Goal: Travel 150 blocks with a llama.
-    Message: You traveled 150 blocks on a llama!
+    Goal: 坐在羊驼身上移动150格！
+    Message: 你在羊驼身上移动了150格！
     Name: distancellama_150
-    DisplayName: Llama Rider
-    Type: rare
+    DisplayName: 羊驼行者
+    Type: normal
 
-# Count distance traveled whilst sneaking.
+# 潜行移动距离
 DistanceSneaking:
   500:
-    Goal: Travel 500 blocks whilst sneaking.
-    Message: You traveled 500 blocks whilst sneaking!
+    Goal: 潜行走过500格
+    Message: 你潜行走过了500格！
     Name: distancesneaking_500
-    DisplayName: Ninja
+    DisplayName: 初阶忍者
     Type: normal
 
-# Count items dropped on the ground.
+# 当一个东西丢到地上
 ItemDrops:
   15:
-    Goal: Drop 15 items.
-    Message: §cYou're killing the planet!
+    Goal: 丢15个东西到地上
+    Message: §c你在乱丢垃圾！罚款！
     Name: itemdrops_15
-    DisplayName: Polluter
+    DisplayName: 污染者
     Type: normal
 
-# Count items picked up from the ground.
+# 从地上捡起东西
 ItemPickups:
   40:
-    Goal: Pick 40 items up.
-    Message: You're saving the planet!
+    Goal: 捡起40个东西
+    Message: 保护环境√
     Name: itempickups_40
-    DisplayName: Environmentalist
+    DisplayName: 环保主义者
     Type: normal
 
-# Count blocks of soil plowed with a hoe.
+# 耕地
 HoePlowings:
   10:
-    Goal: Plow 10 times.
-    Message: You plowed the ground 10 times!
+    Goal: 耕地10次
+    Message: 你耕地了10次！
     Name: hoeplowings_10
-    DisplayName: Farmer
+    DisplayName: 农民
     Type: normal
     Reward:
         Item: cookie 15
 
-# Count the number of bone meals used to fertilise plants.
+# 使用骨粉催熟植物
 Fertilising:
   15:
-    Goal: Use bonemeal 15 times.
-    Message: You used bone meal on plants 15 times!
+    Goal: 催熟15次
+    Message: 你用骨粉催熟了15次！
     Name: fertilising_15
-    DisplayName: Gardener
+    DisplayName: 辣骨催花
     Type: normal
 
-# Count animals tamed.
+# 驯服动物
 Taming:
   1:
-    Goal: Tame an animal.
-    Message: You tamed your first animal!
+    Goal: 驯服一个动物
+    Message: 你驯服了第一只小动物
     Name: taming_1
-    DisplayName: Tamer
+    DisplayName: 铲屎官
     Type: normal
 
-# Count potions brewed.
+# 酿造药水
 Brewing:
   1:
-    Goal: Brew a potion.
-    Message: You brewed your first potion!
+    Goal: 酿造一个药水
+    Message: 你酿造了一瓶药水！
     Name: brewing_1
-    DisplayName: Alchemist
+    DisplayName: 炼金术师
     Type: normal
 
-# Count fireworks launched.
+# 发射烟火
 Fireworks:
   10:
-    Goal: Launch fireworks 10 times.
-    Message: You launched 10 fireworks!
+    Goal: 发射十次烟火
+    Message: 你发射了十次烟火
     Name: fireworks_10
-    DisplayName: Pyrotechnist
+    DisplayName: 社保
     Type: normal
     Reward:
       Experience: 200
 
-# Count music discs played (i.e. inserted in a jukebox).
+# 播放唱片
 MusicDiscs:
   1:
-    Goal: Use a jukebox.
-    Message: One jukebox used!
+    Goal: 使用唱片机
+    Message: 使用了唱片机！效果显著！
     Name: musicdiscs_1
     DisplayName: DJ
     Type: normal
 
-# Count teleportations with an enderpearl.
+# 用末影珍珠传送
 EnderPearls:
   10:
-    Goal: Teleport with ender pearls 10 times.
-    Message: 10 teleportations with ender pearls!
+    Goal: 用末影珍珠传送10次
+    Message: 已经用末影珍珠传送10次了！
     Name: enderpearls_10
-    DisplayName: Teleport Man
+    DisplayName: 小心脚下
     Type: normal
 
-# Count pets given to another player (requires Pet Master plugin).
+# 当一个玩家把宠物交给另一个玩家 (需要前置插件Pet Master版本1.4以上)
 PetMasterGive:
   3:
-    Goal: Give 3 pets to friends.
-    Message: 3 pets given to friends!
+    Goal: 给予3只宠物给他人
+    Message: 已经送出了三只宠物！
     Name: petmastergive_3
-    DisplayName: Donator
+    DisplayName: 捐献佬
     Type: rare
 
-# Count pets received from another player (requires Pet Master plugin).
+# 当一个玩家收到宠物 (需要前置插件Pet Master版本1.4以上)
 PetMasterReceive:
   10:
-    Goal: Receive 10 pets.
-    Message: 10 pets received from friends!
+    Goal: 收到10只宠物
+    Message: 从朋友那里得到了10只宠物
     Name: petmasterreceive_10
-    DisplayName: Receiver
+    DisplayName: 白嫖怪
     Type: rare
 
-# Count items smelt in a furnace.
+# 用熔炉熔炼
 Smelting:
   250:
-    Goal: Smelt 250 items.
-    Message: 250 items smelt in a furnace!
+    Goal: 熔炼250个东西
+    Message: 已经熔炼了250个东西
     Name: smeltitems_250
-    DisplayName: The Smelter
+    DisplayName: 冶 炼 大 师
     Type: normal
 
-# Count raids won.
+# 赢得袭击
 RaidsWon:
   1:
-    Goal: Win a raid.
-    Message: A raid won!
+    Goal: 赢得一场袭击
+    Message: 袭击胜利！
     Name: raidswon_1
-    DisplayName: Accident or intentional?
+    DisplayName: 保卫羊村
     Type: normal
     Reward:
       Item: emerald 8
   10:
-    Goal: Win ten raids.
-    Message: Ten raids!
+    Goal: 赢得十场袭击
+    Message: 获胜十次！
     Name: raidswon_10
-    DisplayName: Village Protector
-    Type: rare
+    DisplayName: 奸商保护者
+    Type: normal
     Reward:
       Item: totem_of_undying 1
 
-# Count the number of times riptide is used with a trident.
+# 使用激流
 Riptides:
   1:
-    Goal: Use a magical trident.
-    Message: You've mastered the powers of the sea!
+    Goal: 使用激流魔法！！
+    Message: 你掌握了大海！
     Name: riptides_1
-    DisplayName: Poseidon
+    DisplayName: 海 王
     Type: normal
 
-# Count the number of advancements completed. Covers all Vanilla advancements, not only those created by /aach generate.
+# 完成指定数量成就
 AdvancementsCompleted:
   20:
-    Goal: Complete 20 advancements.
-    Message: 20 advancements completed!
+    Goal: 完成20个成就
+    Message: 成功完成20个成就！
     Name: advancements_20
-    DisplayName: Game Block Advance
     Type: normal
+    DisplayName: 高阶玩家
     Reward:
-      Item:
+      Item: 
         - diamond 8
         - cake 1
 
-# Count books edited.
-BooksEdited:
-  10:
-    Goal: Edit 10 books.
-    Message: You've used an entire pot of ink!
-    Name: booksedited_10
-    DisplayName: Scribe
-    Type: normal
-
 #======================================================================================================================#
-#                                                 COMMAND ACHIEVEMENTS                                                 #
+#                                                      指令给予成就                                                     #
 #                                                                                                                      #
-#    Achievements in the following categories can only be obtained by running commands or integrating with the API.    #
+#                                            以下成就只能通过本插件API和指令给予                                          #
 #======================================================================================================================#
 
-# Allow Commands achievement to be awarded several times.
+# 允许多次奖励指令成就
 MultiCommand: true
 
-# Achievements in this category can be awarded with commands such as use '/aach give yourAch1 PLAYER'. The /aach give
-# command does not work with other achievements.
+# 拥有 achievement.give 权限的玩家（后台） 可以使用/aach give yourAch1 PLAYER来给予
+# yourAch1 成就给 PLAYER。 /aach give指令对其他类型成就无效
 Commands:
   yourAch1:
-    Goal: Take part in the special event!\nEvery Friday at 8pm!
-    Message: You took part in the special event!
-    Name: your_ach1
-    DisplayName: Special Event Achievement!
+    Goal: 参加了活动!\nWDNMD
+    Message: 你参加了活动-WDNMD
+    Name: yourAch1
+    DisplayName: 特别活动成就！
     Type: rare
 
-# Statistics for this category can be increased using commands such as '/aach add 1 Custom.votes PLAYER'.
+# 当用指令 /aach add 调用这项成就
 Custom:
   votes:
     10:
-      Message: Voted 10 times for the server!
+      Message: 为服务器投票十次！
       Name: customs_votes_10
-      DisplayName: Server fan
-      Type: normal
+      DisplayName: 超级粉丝
+      Type: rare
       Reward:
         Money: 5
 
 #======================================================================================================================#
-#                                                  FUTURE PAREMETERS                                                   #
-#                                                                                                                      #
-#                          New parameters added in future plugin releases will appear below.                           #
+#                                                         更新内容                                                      #
+#                                                     翻译by Fur_Xia                                                   #
+#                                        插件更新加入的新参数会被加在这一项后                                             #
 #======================================================================================================================#
